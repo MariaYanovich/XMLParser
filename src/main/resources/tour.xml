@@ -1,0 +1,243 @@
+<tour:tours xmlns:tour="http://www.example.com/tours">
+
+    <tour id="STR0001">
+        <tourName>voucher1</tourName>
+        <tourType>sightseeing</tourType>
+        <country>france</country>
+        <startDate>2007-10-26</startDate>
+        <days>10</days>
+        <transport>car</transport>
+        <hotelCharacteristic>
+            <stars>4</stars>
+            <hotelType>AL</hotelType>
+            <rooms>10</rooms>
+        </hotelCharacteristic>
+        <cost>1222</cost>
+    </tour>
+
+    <tour id="STR0002">
+        <tourName>voucher2</tourName>
+        <tourType>weekend</tourType>
+        <country>egypt</country>
+        <startDate>2007-10-25</startDate>
+        <days>10</days>
+        <transport>railway</transport>
+        <hotelCharacteristic>
+            <stars>5</stars>
+            <hotelType>AL</hotelType>
+            <rooms>5</rooms>
+        </hotelCharacteristic>
+        <cost>1000</cost>
+    </tour>
+
+    <tour id="STR0003">
+        <tourName>voucher3</tourName>
+        <tourType>sightseeing</tourType>
+        <country>germany</country>
+        <startDate>2007-10-16</startDate>
+        <days>5</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>3</stars>
+            <hotelType>AL</hotelType>
+            <rooms>2</rooms>
+        </hotelCharacteristic>
+        <cost>1500</cost>
+    </tour>
+
+    <tour id="STR0004">
+        <tourName>voucher4</tourName>
+        <tourType>vacation</tourType>
+        <country>italy</country>
+        <startDate>2007-08-26</startDate>
+        <days>15</days>
+        <transport>car</transport>
+        <hotelCharacteristic>
+            <stars>4</stars>
+            <hotelType>FB</hotelType>
+            <rooms>4</rooms>
+        </hotelCharacteristic>
+        <cost>43534</cost>
+    </tour>
+
+    <tour id="STR0005">
+        <tourName>voucher5</tourName>
+        <tourType>vacation</tourType>
+        <country>norway</country>
+        <startDate>2007-10-24</startDate>
+        <days>14</days>
+        <transport>railway</transport>
+        <hotelCharacteristic>
+            <stars>3</stars>
+            <hotelType>BB</hotelType>
+            <rooms>3</rooms>
+        </hotelCharacteristic>
+        <cost>1343</cost>
+    </tour>
+
+    <tour id="STR0006">
+        <tourName>voucher6</tourName>
+        <tourType>pilgrimage</tourType>
+        <country>austria</country>
+        <startDate>2007-01-10</startDate>
+        <days>7</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>4</stars>
+            <hotelType>AL</hotelType>
+            <rooms>1</rooms>
+        </hotelCharacteristic>
+        <cost>4634</cost>
+    </tour>
+
+    <tour id="STR0007">
+        <tourName>voucher7</tourName>
+        <tourType>vacation</tourType>
+        <country>usa</country>
+        <startDate>2007-01-10</startDate>
+        <days>8</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>5</stars>
+            <hotelType>AL</hotelType>
+            <rooms>20</rooms>
+        </hotelCharacteristic>
+        <cost>43532</cost>
+    </tour>
+
+    <tour id="STR0008">
+        <tourName>voucher8</tourName>
+        <tourType>weekend</tourType>
+        <country>canada</country>
+        <startDate>2007-02-10</startDate>
+        <days>7</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>1</stars>
+            <hotelType>HB</hotelType>
+            <rooms>2</rooms>
+        </hotelCharacteristic>
+        <cost>54656</cost>
+    </tour>
+
+    <tour id="STR0009">
+        <tourName>voucher9</tourName>
+        <tourType>pilgrimage</tourType>
+        <country>china</country>
+        <startDate>2007-11-10</startDate>
+        <days>5</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>1</stars>
+            <hotelType>FB</hotelType>
+            <rooms>2</rooms>
+        </hotelCharacteristic>
+        <cost>23525</cost>
+    </tour>
+
+    <tour id="STR0010">
+        <tourName>voucher10</tourName>
+        <tourType>pilgrimage</tourType>
+        <country>france</country>
+        <startDate>2007-11-10</startDate>
+        <days>6</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>4</stars>
+            <hotelType>BB</hotelType>
+            <rooms>2</rooms>
+        </hotelCharacteristic>
+        <cost>234</cost>
+    </tour>
+
+    <tour id="STR0011">
+        <tourName>voucher11</tourName>
+        <tourType>sightseeing</tourType>
+        <country>greece</country>
+        <startDate>2007-04-22</startDate>
+        <days>2</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>5</stars>
+            <hotelType>AL</hotelType>
+            <rooms>2</rooms>
+        </hotelCharacteristic>
+        <cost>43545</cost>
+    </tour>
+
+    <tour id="STR0012">
+        <tourName>voucher12</tourName>
+        <tourType>vacation</tourType>
+        <country>germany</country>
+        <startDate>2007-04-22</startDate>
+        <days>23</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>2</stars>
+            <hotelType>FB</hotelType>
+            <rooms>1</rooms>
+        </hotelCharacteristic>
+        <cost>1200</cost>
+    </tour>
+
+    <tour id="STR0013">
+        <tourName>voucher13</tourName>
+        <tourType>sightseeing</tourType>
+        <country>usa</country>
+        <startDate>2007-04-22</startDate>
+        <days>12</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>1</stars>
+            <hotelType>BB</hotelType>
+            <rooms>5</rooms>
+        </hotelCharacteristic>
+        <cost>12000</cost>
+    </tour>
+
+    <tour id="STR0014">
+        <tourName>voucher14</tourName>
+        <tourType>vacation</tourType>
+        <country>australia</country>
+        <startDate>2007-05-12</startDate>
+        <days>17</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>3</stars>
+            <hotelType>BB</hotelType>
+            <rooms>2</rooms>
+        </hotelCharacteristic>
+        <cost>200.0</cost>
+    </tour>
+
+    <tour id="STR0015">
+        <tourName>voucher15</tourName>
+        <tourType>vacation</tourType>
+        <country>china</country>
+        <startDate>2007-01-12</startDate>
+        <days>17</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>4</stars>
+            <hotelType>HB</hotelType>
+            <rooms>4</rooms>
+        </hotelCharacteristic>
+        <cost>2000.5</cost>
+    </tour>
+
+    <tour id="STR0016">
+        <tourName>voucher16</tourName>
+        <tourType>sightseeing</tourType>
+        <country>mexico</country>
+        <startDate>2007-05-12</startDate>
+        <days>7</days>
+        <transport>air</transport>
+        <hotelCharacteristic>
+            <stars>5</stars>
+            <hotelType>HB</hotelType>
+            <rooms>4</rooms>
+        </hotelCharacteristic>
+        <cost>2000</cost>
+    </tour>
+
+</tour:tours>

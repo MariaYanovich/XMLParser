@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns:tns="http://www.example.com/tours"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/tours">
+    <element name="tours">
+        <complexType>
+            <sequence>
+                <element name="tour"
+                         type="tns:Tour"
+                         minOccurs="0"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Tour">
+        <sequence>
+            <element name="tourName" type="string" default="defaultName"/>
+            <element name="tourType" type="tns:TourType"/>
+            <element name="country" type="tns:Country"/>
+            <element name="startDate" type="date"/>
+            <element name="days" type="int" default="1"/>
+            <element name="transport" type="tns:Transport"/>
+            <element name="hotelCharacteristic"
+                     type="tns:HotelCharacteristic"/>
+            <element name="cost" type="float"/>
+        </sequence>
+        <attribute name="id" type="ID" use="required"/>
+    </complexType>
+    <simpleType name="TourType">
+        <restriction base="string">
+            <enumeration value="weekend"/>
+            <enumeration value="sightseeing"/>
+            <enumeration value="vacation"/>
+            <enumeration value="pilgrimage"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="Country">
+        <restriction base="string">
+            <enumeration value="egypt"/>
+            <enumeration value="italy"/>
+            <enumeration value="france"/>
+            <enumeration value="germany"/>
+            <enumeration value="austria"/>
+            <enumeration value="australia"/>
+            <enumeration value="greece"/>
+            <enumeration value="china"/>
+            <enumeration value="usa"/>
+            <enumeration value="canada"/>
+            <enumeration value="mexico"/>
+            <enumeration value="norway"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="Transport">
+        <restriction base="string">
+            <enumeration value="air"/>
+            <enumeration value="liner"/>
+            <enumeration value="railway"/>
+            <enumeration value="car"/>
+        </restriction>
+    </simpleType>
+    <complexType name="HotelCharacteristic">
+        <sequence>
+            <element name="stars" type="int"/>
+            <element name="hotelType" type="tns:HotelType"/>
+            <element name="rooms" type="int"/>
+        </sequence>
+    </complexType>
+    <simpleType name="HotelType">
+        <restriction base="string">
+            <enumeration value="RO"/>
+            <enumeration value="BB"/>
+            <enumeration value="HB"/>
+            <enumeration value="FB"/>
+            <enumeration value="AL"/>
+        </restriction>
+    </simpleType>
+</schema>
