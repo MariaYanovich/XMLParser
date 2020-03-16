@@ -14,7 +14,7 @@ public class STAXCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         Tours tours = ServiceParser.INSTANCE.parseXML(request, new ToursStAXBuilder());
         if (tours.getTours().isEmpty()) {
-            return PageType.ERROR_PAGE.getValue();
+            return PageType.DEFAULT_PAGE.getValue();
         }
         request.setAttribute("tours", tours.getTours());
         return PageType.RESULT_TABLE_PAGE.getValue();

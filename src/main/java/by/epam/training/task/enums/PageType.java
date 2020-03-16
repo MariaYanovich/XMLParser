@@ -1,7 +1,7 @@
 package by.epam.training.task.enums;
 
 public enum PageType {
-    DEFAULT_PAGE("/view/index.jsp"),
+    DEFAULT_PAGE("index.jsp"),
     ERROR_PAGE("/view/error.jsp"),
     RESULT_TABLE_PAGE("/view/table.jsp");
 
