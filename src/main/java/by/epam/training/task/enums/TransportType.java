@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/simpleType>
  * </pre>
  */
-@XmlType(name = "Transport", namespace = "http://www.example.com/tours")
+@XmlType(name = "TransportType", namespace = "http://www.example.com/tours")
 @XmlEnum
-public enum Transport {
+public enum TransportType {
 
     @XmlEnumValue("air")
     AIR("air"),
@@ -35,12 +35,12 @@ public enum Transport {
     CAR("car");
     private final String value;
 
-    Transport(String v) {
+    TransportType(String v) {
         value = v;
     }
 
-    public static Transport fromValue(String v) {
-        for (Transport c : Transport.values()) {
+    public static TransportType fromValue(String v) {
+        for (TransportType c : TransportType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

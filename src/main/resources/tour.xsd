@@ -20,7 +20,7 @@
             <element name="country" type="tns:Country"/>
             <element name="startDate" type="date"/>
             <element name="days" type="int" default="1"/>
-            <element name="transport" type="tns:Transport"/>
+            <element name="transportType" type="tns:Transport"/>
             <element name="hotelCharacteristic"
                      type="tns:HotelCharacteristic"/>
             <element name="cost" type="float"/>

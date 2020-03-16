@@ -3,7 +3,6 @@ package by.epam.training.task.builder.stax;
 
 import by.epam.training.task.builder.AbstractToursBuilder;
 import by.epam.training.task.entity.HotelCharacteristic;
-import by.epam.training.task.entity.Tour;
 import by.epam.training.task.enums.*;
 import org.apache.log4j.Logger;
 
@@ -35,8 +34,8 @@ public class ToursStAXBuilder extends AbstractToursBuilder {
                 int type = reader.next();
                 if (type == XMLStreamConstants.START_ELEMENT) {
                     name = reader.getLocalName();
-                    if (TourEnum.valueOf(name.toUpperCase()) == TourEnum.TOUR) {
-                        Tour tour = buildSetTours(reader);
+                    if (Tour.valueOf(name.toUpperCase()) == Tour.TOUR) {
+                        by.epam.training.task.entity.Tour tour = buildSetTours(reader);
                         tours.getTours().add(tour);
                     }
                 }
@@ -67,16 +66,16 @@ public class ToursStAXBuilder extends AbstractToursBuilder {
         }
     }
 
-    private Tour buildSetTours(XMLStreamReader reader) throws XMLStreamException {
-        Tour tour = new Tour();
-        tour.setId(reader.getAttributeValue(null, TourEnum.ID.getValue()));
+    private by.epam.training.task.entity.Tour buildSetTours(XMLStreamReader reader) throws XMLStreamException {
+        by.epam.training.task.entity.Tour tour = new by.epam.training.task.entity.Tour();
+        tour.setId(reader.getAttributeValue(null, Tour.ID.getValue()));
         String name;
         while (reader.hasNext()) {
             int type = reader.next();
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
-                    switch (TourEnum.valueOf(name.toUpperCase())) {
+                    switch (Tour.valueOf(name.toUpperCase())) {
                         case TOURNAME:
                             tour.setTourName(getXMLText(reader));
                             break;
@@ -97,7 +96,7 @@ public class ToursStAXBuilder extends AbstractToursBuilder {
                             tour.setDays(Integer.parseInt(getXMLText(reader)));
                             break;
                         case TRANSPORT:
-                            tour.setTransport(Transport.valueOf(getXMLText(reader).toUpperCase()));
+                            tour.setTransportType(TransportType.valueOf(getXMLText(reader).toUpperCase()));
                             break;
                         case HOTELCHARACTERISTIC:
                             tour.setHotelCharacteristic(new HotelCharacteristic());
@@ -110,7 +109,7 @@ public class ToursStAXBuilder extends AbstractToursBuilder {
                     break;
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
-                    if (TourEnum.valueOf(name.toUpperCase()) == TourEnum.TOUR) {
+                    if (Tour.valueOf(name.toUpperCase()) == Tour.TOUR) {
                         return tour;
                     }
                     break;
@@ -127,7 +126,7 @@ public class ToursStAXBuilder extends AbstractToursBuilder {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
-                    switch (TourEnum.valueOf(name.toUpperCase())) {
+                    switch (Tour.valueOf(name.toUpperCase())) {
                         case STARS:
                             hotelCharacteristic.setStars(Integer.parseInt(getXMLText(reader)));
                             break;
@@ -143,7 +142,7 @@ public class ToursStAXBuilder extends AbstractToursBuilder {
                     break;
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
-                    if (TourEnum.valueOf(name.toUpperCase()) == TourEnum.HOTELCHARACTERISTIC) {
+                    if (Tour.valueOf(name.toUpperCase()) == Tour.HOTELCHARACTERISTIC) {
                         return;
                     }
             }

@@ -13,8 +13,11 @@ public class DOMCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         Tours tours = ServiceParser.INSTANCE.parseXML(request, new ToursDOMBuilder());
+        if (tours.getTours().isEmpty()) {
+            return PageType.ERROR_PAGE.getValue();
+        }
         request.setAttribute("tours", tours.getTours());
-        return PageType.TABLE_PAGE.getValue();
+        return PageType.RESULT_TABLE_PAGE.getValue();
 
     }
 }

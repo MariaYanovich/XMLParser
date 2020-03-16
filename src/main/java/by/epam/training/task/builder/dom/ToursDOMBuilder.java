@@ -3,7 +3,6 @@ package by.epam.training.task.builder.dom;
 
 import by.epam.training.task.builder.AbstractToursBuilder;
 import by.epam.training.task.entity.HotelCharacteristic;
-import by.epam.training.task.entity.Tour;
 import by.epam.training.task.enums.*;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
@@ -45,10 +44,10 @@ public class ToursDOMBuilder extends AbstractToursBuilder {
         try {
             document = documentBuilder.parse(source);
             Element root = document.getDocumentElement();
-            NodeList toursList = root.getElementsByTagName(TourEnum.TOUR.getValue());
+            NodeList toursList = root.getElementsByTagName(Tour.TOUR.getValue());
             for (int i = 0; i < toursList.getLength(); i++) {
                 Element tourElement = (Element) toursList.item(i);
-                Tour tour = buildTour(tourElement);
+                by.epam.training.task.entity.Tour tour = buildTour(tourElement);
                 tours.getTours().add(tour);
             }
         } catch (SAXException e) {
@@ -58,31 +57,31 @@ public class ToursDOMBuilder extends AbstractToursBuilder {
         }
     }
 
-    private Tour buildTour(Element tourElement) {
-        Tour tour = new Tour();
-        tour.setId(tourElement.getAttribute(TourEnum.ID.getValue()));
-        tour.setTourName(getElementTextContent(tourElement, TourEnum.TOURNAME.getValue()));
-        String tourType = getElementTextContent(tourElement, TourEnum.TOURTYPE.getValue());
+    private by.epam.training.task.entity.Tour buildTour(Element tourElement) {
+        by.epam.training.task.entity.Tour tour = new by.epam.training.task.entity.Tour();
+        tour.setId(tourElement.getAttribute(Tour.ID.getValue()));
+        tour.setTourName(getElementTextContent(tourElement, Tour.TOURNAME.getValue()));
+        String tourType = getElementTextContent(tourElement, Tour.TOURTYPE.getValue());
         tour.setTourType(TourType.valueOf(tourType.toUpperCase()));
-        String country = getElementTextContent(tourElement, TourEnum.COUNTRY.getValue());
+        String country = getElementTextContent(tourElement, Tour.COUNTRY.getValue());
         tour.setCountry(Country.valueOf(country.toUpperCase()));
         try {
             tour.setStartDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(getElementTextContent(tourElement,
-                    TourEnum.STARTDATE.getValue())));
+                    Tour.STARTDATE.getValue())));
         } catch (DatatypeConfigurationException e) {
             LOGGER.error(e);
         }
-        tour.setDays(Integer.parseInt(getElementTextContent(tourElement, TourEnum.DAYS.getValue())));
-        String transport = getElementTextContent(tourElement, TourEnum.TRANSPORT.getValue());
-        tour.setTransport(Transport.valueOf(transport.toUpperCase()));
+        tour.setDays(Integer.parseInt(getElementTextContent(tourElement, Tour.DAYS.getValue())));
+        String transport = getElementTextContent(tourElement, Tour.TRANSPORT.getValue());
+        tour.setTransportType(TransportType.valueOf(transport.toUpperCase()));
         tour.setHotelCharacteristic(new HotelCharacteristic());
         HotelCharacteristic characteristic = tour.getHotelCharacteristic();
-        Element characteristicElement = (Element) tourElement.getElementsByTagName(TourEnum.HOTELCHARACTERISTIC.getValue()).item(0);
-        characteristic.setStars(Integer.parseInt(getElementTextContent(characteristicElement, TourEnum.STARS.getValue())));
-        String type = getElementTextContent(characteristicElement, TourEnum.HOTELTYPE.getValue());
+        Element characteristicElement = (Element) tourElement.getElementsByTagName(Tour.HOTELCHARACTERISTIC.getValue()).item(0);
+        characteristic.setStars(Integer.parseInt(getElementTextContent(characteristicElement, Tour.STARS.getValue())));
+        String type = getElementTextContent(characteristicElement, Tour.HOTELTYPE.getValue());
         characteristic.setHotelType(HotelType.valueOf(type.toUpperCase()));
-        characteristic.setRooms(Integer.parseInt(getElementTextContent(characteristicElement, TourEnum.ROOMS.getValue())));
-        tour.setCost(Float.parseFloat(getElementTextContent(tourElement, TourEnum.COST.getValue())));
+        characteristic.setRooms(Integer.parseInt(getElementTextContent(characteristicElement, Tour.ROOMS.getValue())));
+        tour.setCost(Float.parseFloat(getElementTextContent(tourElement, Tour.COST.getValue())));
         return tour;
     }
 }

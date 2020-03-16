@@ -13,7 +13,7 @@ public class CommandFactory {
     }
 
     public static CommandFactory getInstance() {
-        return CommandHolder.HOLDER_INSTANCE;
+        return CommandHolder.COMMAND_HOLDER_INSTANCE;
     }
 
     public Command doCommand(String typeParser) {
@@ -35,6 +35,6 @@ public class CommandFactory {
     }
 
     private static class CommandHolder {
-        public static final CommandFactory HOLDER_INSTANCE = new CommandFactory();
+        public static final CommandFactory COMMAND_HOLDER_INSTANCE = new CommandFactory();
     }
 }

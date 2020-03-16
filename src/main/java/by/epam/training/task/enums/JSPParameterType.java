@@ -1,13 +1,13 @@
 package by.epam.training.task.enums;
 
-public enum CommandType {
+public enum JSPParameterType {
     COMMAND("command"),
     ERROR("error"),
     FILE("file");
 
     private String value;
 
-    CommandType(String value) {
+    JSPParameterType(String value) {
         this.value = value;
     }
 

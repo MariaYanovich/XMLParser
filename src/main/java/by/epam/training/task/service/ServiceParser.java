@@ -2,7 +2,7 @@ package by.epam.training.task.service;
 
 import by.epam.training.task.builder.AbstractToursBuilder;
 import by.epam.training.task.entity.Tours;
-import by.epam.training.task.enums.CommandType;
+import by.epam.training.task.enums.JSPParameterType;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -18,10 +18,9 @@ public enum ServiceParser {
 
     public Tours parseXML(HttpServletRequest request, AbstractToursBuilder builder) {
         try {
-            Part filePart = request.getPart(CommandType.FILE.getValue());
+            Part filePart = request.getPart(JSPParameterType.FILE.getValue());
             InputStream fileContent = filePart.getInputStream();
             builder.buildTours(fileContent);
-
         } catch (IOException | ServletException e) {
             LOGGER.error(e);
         }

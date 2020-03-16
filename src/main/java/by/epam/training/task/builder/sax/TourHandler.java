@@ -1,7 +1,6 @@
 package by.epam.training.task.builder.sax;
 
 import by.epam.training.task.entity.HotelCharacteristic;
-import by.epam.training.task.entity.Tour;
 import by.epam.training.task.entity.Tours;
 import by.epam.training.task.enums.*;
 import org.apache.log4j.Logger;
@@ -17,13 +16,13 @@ public class TourHandler extends DefaultHandler {
     private static final Logger LOGGER = Logger.getLogger(TourHandler.class);
 
     private Tours tours;
-    private Tour current = null;
-    private TourEnum currentEnum = null;
-    private EnumSet<TourEnum> withText;
+    private by.epam.training.task.entity.Tour current = null;
+    private Tour currentEnum = null;
+    private EnumSet<Tour> withText;
 
     public TourHandler() {
         tours = new Tours();
-        withText = EnumSet.range(TourEnum.TOURNAME, TourEnum.COST);
+        withText = EnumSet.range(Tour.TOURNAME, Tour.COST);
     }
 
     public Tours getTours() {
@@ -33,12 +32,12 @@ public class TourHandler extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
-        if (TourEnum.TOUR.getValue().equals(localName)) {
-            current = new Tour();
+        if (Tour.TOUR.getValue().equals(localName)) {
+            current = new by.epam.training.task.entity.Tour();
             current.setId(attributes.getValue(0));
 
         } else {
-            TourEnum temp = TourEnum.valueOf(localName.toUpperCase());
+            Tour temp = Tour.valueOf(localName.toUpperCase());
             if (withText.contains(temp)) {
                 currentEnum = temp;
             }
@@ -48,7 +47,7 @@ public class TourHandler extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) {
-        if (TourEnum.TOUR.getValue().equals(localName)) {
+        if (Tour.TOUR.getValue().equals(localName)) {
             tours.getTours().add(current);
         }
     }
@@ -78,7 +77,7 @@ public class TourHandler extends DefaultHandler {
                     current.setDays(Integer.parseInt(currentField));
                     break;
                 case TRANSPORT:
-                    current.setTransport(Transport.valueOf(currentField.toUpperCase()));
+                    current.setTransportType(TransportType.valueOf(currentField.toUpperCase()));
                     break;
                 case HOTELCHARACTERISTIC:
                     current.setHotelCharacteristic(new HotelCharacteristic());
