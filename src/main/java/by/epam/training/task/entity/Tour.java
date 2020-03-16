@@ -2,7 +2,7 @@ package by.epam.training.task.entity;
 
 import by.epam.training.task.enums.Country;
 import by.epam.training.task.enums.TourType;
-import by.epam.training.task.enums.TransportType;
+import by.epam.training.task.enums.Transport;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
@@ -42,7 +42,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
         "country",
         "startDate",
         "days",
-        "transportType",
+        "transport",
         "hotelCharacteristic",
         "cost"
 })
@@ -63,7 +63,7 @@ public class Tour {
     protected int days;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
-    protected TransportType transportType;
+    protected Transport transport;
     @XmlElement(required = true)
     protected HotelCharacteristic hotelCharacteristic;
     protected float cost;
@@ -171,20 +171,20 @@ public class Tour {
      * Gets the value of the transport property.
      *
      * @return possible object is
-     * {@link TransportType }
+     * {@link Transport }
      */
-    public TransportType getTransportType() {
-        return transportType;
+    public Transport getTransport() {
+        return transport;
     }
 
     /**
      * Sets the value of the transport property.
      *
      * @param value allowed object is
-     *              {@link TransportType }
+     *              {@link Transport }
      */
-    public void setTransportType(TransportType value) {
-        this.transportType = value;
+    public void setTransport(Transport value) {
+        this.transport = value;
     }
 
     /**
@@ -249,7 +249,7 @@ public class Tour {
                 ", country=" + country +
                 ", startDate=" + startDate +
                 ", days=" + days +
-                ", transport=" + transportType +
+                ", transport=" + transport +
                 "," + hotelCharacteristic +
                 ", cost=" + cost;
     }

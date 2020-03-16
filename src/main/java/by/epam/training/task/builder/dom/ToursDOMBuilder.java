@@ -73,7 +73,7 @@ public class ToursDOMBuilder extends AbstractToursBuilder {
         }
         tour.setDays(Integer.parseInt(getElementTextContent(tourElement, Tour.DAYS.getValue())));
         String transport = getElementTextContent(tourElement, Tour.TRANSPORT.getValue());
-        tour.setTransportType(TransportType.valueOf(transport.toUpperCase()));
+        tour.setTransport(Transport.valueOf(transport.toUpperCase()));
         tour.setHotelCharacteristic(new HotelCharacteristic());
         HotelCharacteristic characteristic = tour.getHotelCharacteristic();
         Element characteristicElement = (Element) tourElement.getElementsByTagName(Tour.HOTELCHARACTERISTIC.getValue()).item(0);

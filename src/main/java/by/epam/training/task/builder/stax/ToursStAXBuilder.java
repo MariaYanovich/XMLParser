@@ -96,7 +96,7 @@ public class ToursStAXBuilder extends AbstractToursBuilder {
                             tour.setDays(Integer.parseInt(getXMLText(reader)));
                             break;
                         case TRANSPORT:
-                            tour.setTransportType(TransportType.valueOf(getXMLText(reader).toUpperCase()));
+                            tour.setTransport(Transport.valueOf(getXMLText(reader).toUpperCase()));
                             break;
                         case HOTELCHARACTERISTIC:
                             tour.setHotelCharacteristic(new HotelCharacteristic());

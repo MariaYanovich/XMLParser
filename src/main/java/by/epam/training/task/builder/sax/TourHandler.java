@@ -77,7 +77,7 @@ public class TourHandler extends DefaultHandler {
                     current.setDays(Integer.parseInt(currentField));
                     break;
                 case TRANSPORT:
-                    current.setTransportType(TransportType.valueOf(currentField.toUpperCase()));
+                    current.setTransport(Transport.valueOf(currentField.toUpperCase()));
                     break;
                 case HOTELCHARACTERISTIC:
                     current.setHotelCharacteristic(new HotelCharacteristic());
