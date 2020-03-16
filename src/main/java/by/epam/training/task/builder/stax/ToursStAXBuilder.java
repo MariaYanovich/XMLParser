@@ -1,11 +1,11 @@
 package by.epam.training.task.builder.stax;
 
 
-import org.apache.log4j.Logger;
 import by.epam.training.task.builder.AbstractToursBuilder;
 import by.epam.training.task.entity.HotelCharacteristic;
 import by.epam.training.task.entity.Tour;
 import by.epam.training.task.enums.*;
+import org.apache.log4j.Logger;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;

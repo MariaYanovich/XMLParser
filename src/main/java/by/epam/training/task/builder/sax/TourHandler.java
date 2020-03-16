@@ -1,12 +1,12 @@
 package by.epam.training.task.builder.sax;
 
-import org.apache.log4j.Logger;
-import org.xml.sax.Attributes;
-import org.xml.sax.helpers.DefaultHandler;
 import by.epam.training.task.entity.HotelCharacteristic;
 import by.epam.training.task.entity.Tour;
 import by.epam.training.task.entity.Tours;
 import by.epam.training.task.enums.*;
+import org.apache.log4j.Logger;
+import org.xml.sax.Attributes;
+import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;

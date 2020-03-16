@@ -1,10 +1,10 @@
 package by.epam.training.task.builder.sax;
 
+import by.epam.training.task.builder.AbstractToursBuilder;
 import org.apache.log4j.Logger;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
-import by.epam.training.task.builder.AbstractToursBuilder;
 
 import javax.xml.XMLConstants;
 import java.io.IOException;

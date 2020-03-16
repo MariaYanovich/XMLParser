@@ -1,16 +1,16 @@
 package by.epam.training.task.builder.dom;
 
 
+import by.epam.training.task.builder.AbstractToursBuilder;
+import by.epam.training.task.entity.HotelCharacteristic;
+import by.epam.training.task.entity.Tour;
+import by.epam.training.task.enums.*;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import by.epam.training.task.builder.AbstractToursBuilder;
-import by.epam.training.task.entity.HotelCharacteristic;
-import by.epam.training.task.entity.Tour;
-import by.epam.training.task.enums.*;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;

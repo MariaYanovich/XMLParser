@@ -2,6 +2,7 @@ package by.epam.training.task.factory;
 
 import by.epam.training.task.command.Command;
 import by.epam.training.task.command.impl.DOMCommand;
+import by.epam.training.task.command.impl.ErrorCommand;
 import by.epam.training.task.command.impl.SAXCommand;
 import by.epam.training.task.command.impl.STAXCommand;
 
@@ -25,7 +26,7 @@ public class CommandFactory {
             case SAX:
                 return new SAXCommand();
             default:
-                throw new EnumConstantNotPresentException(type.getDeclaringClass(), type.name());
+                return new ErrorCommand();
         }
     }
 

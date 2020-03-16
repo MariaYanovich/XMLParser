@@ -14,4 +14,4 @@ public enum PageType {
     public String getValue() {
         return value;
     }
-    }
+}

@@ -1,10 +1,9 @@
 package by.epam.training.task.service;
 
-import org.apache.log4j.Logger;
 import by.epam.training.task.builder.AbstractToursBuilder;
 import by.epam.training.task.entity.Tours;
 import by.epam.training.task.enums.CommandType;
-import by.epam.training.task.validator.Validator;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,9 +20,8 @@ public enum ServiceParser {
         try {
             Part filePart = request.getPart(CommandType.FILE.getValue());
             InputStream fileContent = filePart.getInputStream();
-            if (Validator.isValidResources()) {
-                builder.buildTours(fileContent);
-            }
+            builder.buildTours(fileContent);
+
         } catch (IOException | ServletException e) {
             LOGGER.error(e);
         }

@@ -21,9 +21,8 @@ public class Controller extends HttpServlet {
     }
 
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String name = request.getParameter(CommandType.COMMAND.getValue());
-        Command command = CommandFactory.getInstance().doCommand(name);
-        String forwardPage = command.execute(request, response);
-        request.getRequestDispatcher(forwardPage).forward(request, response);
+        Command command = CommandFactory.getInstance().doCommand(request.getParameter(CommandType.COMMAND.getValue()));
+        String nextPage = command.execute(request, response);
+        request.getRequestDispatcher(nextPage).forward(request, response);
     }
 }
