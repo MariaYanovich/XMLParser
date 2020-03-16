@@ -5,6 +5,7 @@ import by.epam.training.task.command.impl.DOMCommand;
 import by.epam.training.task.command.impl.ErrorCommand;
 import by.epam.training.task.command.impl.SAXCommand;
 import by.epam.training.task.command.impl.STAXCommand;
+import by.epam.training.task.enums.ParserType;
 
 public class CommandFactory {
 
@@ -17,7 +18,7 @@ public class CommandFactory {
     }
 
     public Command doCommand(String typeParser) {
-        TypeParser type = TypeParser.valueOf(typeParser.toUpperCase());
+        ParserType type = ParserType.valueOf(typeParser.toUpperCase());
         switch (type) {
             case DOM:
                 return new DOMCommand();
@@ -28,10 +29,6 @@ public class CommandFactory {
             default:
                 return new ErrorCommand();
         }
-    }
-
-    private enum TypeParser {
-        SAX, STAX, DOM
     }
 
     private static class CommandHolder {

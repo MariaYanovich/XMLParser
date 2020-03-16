@@ -1,6 +1,6 @@
 package by.epam.training.task.enums;
 
-public enum Tour {
+public enum TourEnum {
     TOURS("tours"),
     TOUR("tour"),
     ID("id"),
@@ -18,7 +18,7 @@ public enum Tour {
 
     private String value;
 
-    Tour(String value) {
+    TourEnum(String value) {
         this.value = value;
     }
 

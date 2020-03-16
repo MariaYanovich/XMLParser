@@ -17,12 +17,12 @@ public class TourHandler extends DefaultHandler {
 
     private Tours tours;
     private by.epam.training.task.entity.Tour current = null;
-    private Tour currentEnum = null;
-    private EnumSet<Tour> withText;
+    private TourEnum currentEnum = null;
+    private EnumSet<TourEnum> withText;
 
     public TourHandler() {
         tours = new Tours();
-        withText = EnumSet.range(Tour.TOURNAME, Tour.COST);
+        withText = EnumSet.range(TourEnum.TOURNAME, TourEnum.COST);
     }
 
     public Tours getTours() {
@@ -32,12 +32,12 @@ public class TourHandler extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
-        if (Tour.TOUR.getValue().equals(localName)) {
+        if (TourEnum.TOUR.getValue().equals(localName)) {
             current = new by.epam.training.task.entity.Tour();
             current.setId(attributes.getValue(0));
 
         } else {
-            Tour temp = Tour.valueOf(localName.toUpperCase());
+            TourEnum temp = TourEnum.valueOf(localName.toUpperCase());
             if (withText.contains(temp)) {
                 currentEnum = temp;
             }
@@ -47,7 +47,7 @@ public class TourHandler extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) {
-        if (Tour.TOUR.getValue().equals(localName)) {
+        if (TourEnum.TOUR.getValue().equals(localName)) {
             tours.getTours().add(current);
         }
     }
