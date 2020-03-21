@@ -74,7 +74,8 @@
     </tbody>
 </table>
 <div class="w3-container w3-opacity w3-right-align w3-padding">
-    <button class="w3-btn w3-round-large w3-hover-pale-yellow" onclick="location.href='/XMLParser'">
+    <button class="w3-btn w3-round-large w3-hover-pale-yellow"
+            onclick="location.href='/XMLParser'">
         Back to
         main
     </button>
