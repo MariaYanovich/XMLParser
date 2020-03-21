@@ -56,7 +56,7 @@
     </thead>
     <tbody>
 
-    <c:forEach var="tour" items="${tours}" varStatus="status">
+    <c:forEach var="tour" items="${requestScope.tours}" varStatus="status">
         <tr>
             <td>${tour.id}</td>
             <td>${tour.tourName}</td>
